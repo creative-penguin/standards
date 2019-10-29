@@ -36,10 +36,11 @@ module.exports = {
 There are 3 config options for ESLint available:
    * `./node_modules/@creativepenguin/standards/eslint/index.js`
       * Base configuration for JavaScript and TypeScript
+      * These rules are inherrited by all other configs
    * `./node_modules/@creativepenguin/standards/eslint/node.js`
       * Additional environment for Node.js
    * `./node_modules/@creativepenguin/standards/eslint/vue.js`
-      * Vue specific rules and plugins
+      * Additional Vue specific rules and plugins
 
 ## Commitlint
 
@@ -85,4 +86,3 @@ In 'package.json', add:
   }
 }
 ```
-

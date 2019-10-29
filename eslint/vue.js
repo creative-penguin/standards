@@ -1,11 +1,16 @@
 'use strict';
 
+const tsParserOptions = {
+   // this parser will be used for script tags
+   parser: '@typescript-eslint/parser',
+   // Disable warning banner for possibly incompatible versions of TypeScript
+   loggerFn: false,
+};
+
+
 module.exports = {
    extends: [ 'plugin:vue/recommended', '@vue/typescript', './node.js' ],
-   parserOptions: {
-      // This parser will be used for script tags
-      parser: '@typescript-eslint/parser',
-   },
+   parserOptions: tsParserOptions,
    rules: {
       'vue/html-closing-bracket-newline': [
          'error',
@@ -55,18 +60,15 @@ module.exports = {
     * War of the parsers
     *
     * The @silvermine config sets an override for ts filse to use the
-    * @typescript-eslint/parser, but since we ts files will import vue files eslint is not
-    * using the vue parser for the imported vue files. so we need to re overide it.
+    * @typescript-eslint/parser, but since ts files will import vue files eslint is not
+    * using the vue parser for the imported vue files. so we need to re-override it.
     */
    overrides: [
       {
          files: [ '*.ts' ],
 
          parser: 'vue-eslint-parser',
-         parserOptions: {
-            // this parser will be used for script tags
-            parser: '@typescript-eslint/parser',
-         },
+         parserOptions: tsParserOptions,
       },
    ],
 };
