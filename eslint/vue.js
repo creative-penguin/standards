@@ -12,6 +12,9 @@ module.exports = {
    extends: [ 'plugin:vue/recommended', '@vue/typescript', './node.js' ],
    parserOptions: tsParserOptions,
    rules: {
+      'vue/singleline-html-element-content-newline': 'off',
+      'vue/component-name-in-template-casing': 'off',
+
       'vue/html-closing-bracket-newline': [
          'error',
          {
@@ -19,6 +22,7 @@ module.exports = {
             multiline: 'never',
          },
       ],
+
       'vue/max-attributes-per-line': [
          'error',
          {
@@ -31,19 +35,6 @@ module.exports = {
          },
       ],
 
-      // The following emulate the @silvermine config in template tags
-      'vue/brace-style': [ 'error', '1tbs' ],
-      'vue/eqeqeq': 'error',
-      'vue/array-bracket-spacing': [ 'error', 'always' ],
-      'vue/arrow-spacing': [ 'error', { before: true, after: true } ],
-      'vue/block-spacing': 'error',
-      'vue/camelcase': 'error',
-      'vue/key-spacing': 'error',
-      'vue/match-component-file-name': [ 'error', { extensions: [ 'vue', 'ts' ] } ],
-      'vue/no-boolean-default': 'off',
-      'vue/object-curly-spacing': [ 'error', 'always' ],
-      'vue/space-infix-ops': 'error',
-      'vue/space-unary-ops': 'error',
       'vue/html-indent': [
          'error',
          3,
